@@ -1,22 +1,50 @@
 //TODO: add the appropriate include statements (iostream and string)
+#include <iostream>
+#include <string>
+#include <iomanip>
 
 //TODO: create the main function
+
+int main()
 {
     //TODO: make three variables: itemName (type string), price (type double), and quantity (type int)
+
+    std::string itemName = "";
+    double price = 0;
+    int quantity = 0;
+
 
     const double TAX_RATE = 0.07;
 
     std::cout << "Enter item name: ";
     std::cin >> itemName;
 
+    std::cout << std::fixed;
+    std::cout << std::setprecision(2);
+
     //TODO: print the following to the screen: "Enter price per item: "
+    
+    std::cout << "Enter price per item: ";
+
     //TODO: have the user enter the price
 
+    std::cin >> price;
+
     //TODO: print the following to the screen: "Enter quantity: "
+     
+    std::cout << "Enter quantity: ";
+
     //TODO: have the user enter the quantity
+
+    std::cin >> quantity;
 
     //TODO: Set values to the subtotal, tax, and total. The subtotal would be the total price before taxes. The tax would be the subtotal multiplied by the tax rate, and 
     //      the total would be the total plus the tax
+    double subtotal = price * quantity;
+    double tax = subtotal * TAX_RATE;
+    double total = subtotal + tax;
+
+    
 
     // Output
     std::cout << "\n----- RECEIPT -----\n";
@@ -29,4 +57,5 @@
     std::cout << "-------------------\n";
 
 //TODO: remember the return 0!
+    return 0;
 }
